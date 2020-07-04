@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Svelte app</title>
+
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="bundle.css" />
+  </head>
+
+  <body>
+    <script class="polyfill">
+      if (this.customElements)
+        try {
+          customElements.define(
+            "built-in",
+            document.createElement("p").constructor,
+            { extends: "p" }
+          );
+        } catch (a) {
+          // INLINE node_modules/@ungap/custom-elements-builtin/min.js
+        }
+      else {
+        // INLINE node_modules/document-register-element/build/document-register-element.js
+      }
+    </script>
+    <script class="polyfill">
+      // INLINE node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js
+    </script>
+    <script src="bundle.js"></script>
+  </body>
+</html>
